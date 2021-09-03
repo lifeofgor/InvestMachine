@@ -1,0 +1,9 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Добро пожаловать{% endblock %}
+
+{% block content %}
+  <center><h1>Здравствуй {{ new_user.first_name }}!</h1></center>
+  <center><p>Вы успешно сделали аккаунт.
+      Сейчас вам необходимо <a href="{% url 'login' %}">войти</a>.</p></center>
+{% endblock %}

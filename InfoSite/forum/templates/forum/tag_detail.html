@@ -1,0 +1,30 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}
+  {{ tag.title }} - {{ block.super }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="mb-5" >Пост по тэгу "{{ tag.title|title }}" </h1>
+    {% for post in tag.lkpages.all %}
+        <a href="{% url 'detailforum' post.id %}">
+            <div class="alert alert-warning">
+                <center><h2>{{ post.title_page }}</h2>
+                <p>{{ post.preview_page }}</p>
+                <p>{{ post.text_page }}</p>
+            <img src="{{ post.img_page.url }}" width="620px" height="340px" style="margin: 10px;" ></center>
+            </div>
+        </a>
+    {% endfor %}
+<style>
+.alert alert-warning{
+        float: right;
+        width: 800px;
+        height: auto;
+        margin: 20px 30px;
+        background-color: #4f4f4f;
+        color: white;
+        border-radius: 20px;
+    }
+</style>
+{% endblock %}

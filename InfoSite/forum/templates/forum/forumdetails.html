@@ -1,0 +1,55 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Форум{% endblock %}
+
+{% block content %}
+
+    <div class="DetailPage">
+            <center><h1>{{ article.title_page }}</h1>
+            <h4>{{ article.preview_page }}</h4></center>
+            <hr>
+                <div class="imgDetail">
+                    <p>{{ article.text_page }}</p>
+                    <p>{{ article.tag.all }}</p>
+                    <small><p> Автор: {{ article.user.username }}</p></small>
+                    <center><img src="{{ article.img_page.url }}" width="700px" height="500px"></center>
+                </div>
+            {% if user.id == article.user.id %}
+                <a href="{% url 'deletepost' article.id %}" class="btn btn-danger " style="width: 270px; margin-left: 70%; ">Удалить свой пост</a>
+            {% endif %}
+        <hr>
+        {% for el in article.comments.all %}
+        <div class = 'commentsforum' >
+            <h4>{{ el.author.username }}</h4>
+            <hr>
+            <p>{{ el.body }}</p>
+            <hr>
+            {% if user.id == el.author.id %}
+            <div class="delt">
+                <a class="fas fa-trash-alt" href="{% url 'deletecomment' el.id %}"></a>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        <hr>
+        <div>
+            <form method="post" enctype="multipart/form-data">
+                <p>{{ form.as_p }}</p>
+                <p><input type="submit" value="добавить комментарий" class="btn btn-success btn-sm d-block mx-auto"></p>
+            </form>
+        </div>
+    </div>
+<style>
+    .commentsforum{
+    width: 900px;
+    height: auto;
+    margin: 20px 25px;
+    border-radius: 10px;
+    clear: both;
+    padding:10px;
+    border:2px solid #666666;
+    }
+    .delt{
+    }
+</style>
+{% endblock  %}

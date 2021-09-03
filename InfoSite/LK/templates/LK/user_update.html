@@ -1,0 +1,47 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Настройки{% endblock %}
+
+{% block content %}
+<h1>Дополнить информацию</h1>
+<div class = 'update_account'>
+  <p>Пожалуйста заполните данные</p>
+  <form action="." method="post" enctype="multipart/form-data">
+           <div class="update">{{ profile_form.telegram }}
+        <p>
+            <font size="1"> введите свой тг</font>
+        </p></div>
+      <div class="update">{{ profile_form.VK }}
+        <p>
+            <font size="1"> введите свой ник в вк</font>
+        </p></div>
+            <div class="update" class="btn">{{ profile_form.image }}
+        <p>
+            <duv class = 'but'>
+                <button type="submit" class="btn btn-success btn-sm d-block mx-auto">Сохранить</button>
+            </duv>
+
+        </p></div>
+<style>
+     .update_account{
+        margin: 50px auto;
+        text-align: center;
+        border-style: solid;
+        width: 500px;
+        height: 300px;
+        background-color: #3e3740;
+        border-color: #3e3740;
+        color: white;
+        border-radius: 20px;
+        display: block;
+        text-align: center;
+    }
+.update{
+   width: 100%;
+{
+.btn{
+    width: 100%;
+    text-align: center;
+}
+</style>
+{% endblock %}

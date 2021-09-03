@@ -1,0 +1,72 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Личная страница{% endblock %}
+
+{% block content %}
+<form method="post" action=".">
+    {% csrf_token %}
+<div class="blockInfo">
+    {% if user.profile.image %}
+        <img class="imgProf" src="{{ user.profile.image.url }}" height="250px" width="250px" />
+    {% else %}
+        <img class="imgProf" src="{% static 'LK/img/def.jpg' %}}" height="250px" width="250px" />
+    {% endif %}
+    <h2> {{ user.username }}</h2>
+    <div class="but"></div>
+        <a href="{% url 'add' %}" class = 'btn btn-success btn-sm d-block mx-auto' style="width: 270px;" >Добавить запись на форум</a>
+        <a href="{% url 'update' %}" class="btn btn-warning btn-sm d-block mx-auto" style="width: 270px; margin: 5px;"> Редактировать</a>
+        <a href="{% url 'exit' %}" class="btn btn-danger btn-sm d-block mx-auto" style="width: 270px;">Выход</a>
+<div class="contact">
+    <h3>Контакты</h3>
+    <span><a href="https://Vk.com/{{ user.profile.VK }}">
+        <img src="{% static 'main/img/VK.png' %}" height="50px" width="50px">
+    </a></span>
+        <span><a href="https://t.me/{{ user.profile.telegram }}">
+        <img src="{% static 'main/img/telegram.png' %}" height="50px" width="50px">
+    </a></span>
+</div>
+    </div>
+</div>
+<a href="{% url 'forum' %}">
+    {% for el in news %}
+    <div class="News">
+        <center>
+            <h2>{{ el.title_page }}</h2>
+        <p>{{ el.preview_page }}</p>
+        <p>{{ el.text_page }}</p></center>
+        <img src="{{ el.img_page.url }}" width="580px" height="300px" style="margin: 10px;" >
+    </div>
+</a>
+    {% endfor %}
+    {% csrf_token %}
+</form>
+<style>
+    .blockInfo{
+         float: left;
+         width: 300px;
+         height: 690px;
+        border-style: solid;
+        background-color: #3e3740;
+        border-color: #3e3740;
+        color: white;
+        border-radius: 20px;
+        text-align:center;
+    }
+    .imgProf{
+        border-radius: 50%;
+        margin: 20px;
+        text-align:center;
+    }
+    .but{
+    }
+    .News{
+    float: right;
+    width: 600px;
+    height: auto;
+    margin: 20px 150px;
+    background-color: #4f4f4f;
+    color: white;
+    border-radius: 20px;
+    }
+</style>
+{% endblock  %}

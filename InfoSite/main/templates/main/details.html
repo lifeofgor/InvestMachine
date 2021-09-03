@@ -1,0 +1,18 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <div class="DetailPage">
+            <center><h1>{{ article.title }}</h1>
+            <h4>{{ article.preview }}</h4></center>
+            <hr>
+                <div class="imgDetail">
+                    <img src="{{ article.img }}" width="500px" height="300px" align="left">
+                    <p>{{ article.full_text }}</p>
+                </div>
+        <hr>
+        <p><a href="https://quote.rbc.ru/">Читать больше</a> </p>
+    </div>
+
+{% endblock  %}

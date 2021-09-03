@@ -1,0 +1,50 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Форум{% endblock %}
+
+{% block content %}
+<h1>Форум</h1>
+<div class="poisk">
+<h3>Поиск по форуму</h3>
+    <form class="form-inline" action="{% url 'forum' %}">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="search">
+    <button class="" type="submit">Поиск</button>
+    </form>
+</div>
+<div class = 'page'>
+    {% for el in forumNews %}
+<a href="{% url 'detailforum' el.id %}">
+    <div class="alert alert-warning">
+        <center><h2>{{ el.title_page }}</h2>
+        <p>{{ el.preview_page }}</p>
+        <p>{{ el.text_page }}</p>
+        <img src="{{ el.img_page.url }}" width="620px" height="340px" style="margin: 10px;" ></center>
+    </div>
+</div>
+</a>
+    {% endfor %}
+<style>
+    .forumPage{
+        width: 670px;
+        height: auto;
+        margin: 30px 30px;
+        margin-left: 1%;
+        background-color: #4f4f4f;
+        color: white;
+        border-radius: 20px;
+    }
+    .tagsmenu{
+        float: left;
+        width: 200px;
+        height: auto;
+        margin: 30px 25px;
+        background-color: #4f4f4f;
+        color: white;
+    }
+    .poisk{
+        margin: 1px 25px;
+        float: right;
+        width: 350px;
+    }
+</style>
+{% endblock  %}

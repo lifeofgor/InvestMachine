@@ -1,0 +1,39 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Добавление новостей{% endblock %}
+
+{% block content %}
+<h1>Добавьте новую запись</h1>
+<div class="NewsAdd">
+<form action="." method="post" enctype="multipart/form-data">
+    <h3>Введите текст и загрузите картинку</h3>
+    <p>{{ form_add.title_page }}</p>
+    <font size="1"> Напишите заголовок</font>
+    <p>{{ form_add.preview_page }}</p>
+    <font size="1"> Напишите превью</font>
+    <p>{{ form_add.text_page }}</p>
+    <font size="1"> Введите текст</font>
+    <p>{{ form_add.img_page }}</p>
+    <font size="1"> загрузите фото</font>
+    <p>{{ form_add.data_page }}</p>
+    <font size="1"> Дата</font>
+    <p><input type="submit" value="Создать запись" class="btn btn-success btn-sm d-block mx-auto"></p>
+</form>
+</div>
+    {% csrf_token %}
+<style>
+.NewsAdd{
+    margin: 50px auto;
+        text-align: center;
+        border-style: solid;
+        width: 600px;
+        height: auto;
+        background-color: #3e3740;
+        border-color: #3e3740;
+        color: white;
+        border-radius: 20px;
+        display: block;
+        text-align: center;
+        }
+</style>
+{% endblock  %}

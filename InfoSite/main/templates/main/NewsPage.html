@@ -1,0 +1,18 @@
+{% extends 'main/TopOfTheSite.html' %}
+{% load static %}
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+<div class="NewsAll">
+<h1> Новости </h1>
+    {% for el in news %}
+    <a href="{% url 'detail' el.id %}" >
+        <div class="alert alert-warning" >
+            <center><h2>{{el.title }}</h2>
+            <p>{{el.preview }}</p></center>
+            <img src="{{ el.img }}" width="700px" height="400px">
+        </div>
+    </a>
+</div>
+    {% endfor %}
+{% endblock  %}
