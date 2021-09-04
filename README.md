@@ -17,4 +17,4 @@ INVEST MACHINE is an investment portal with sections: news, forum, about us, per
 ![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/addNews.png)
 ![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/info.png)
 ![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/Forumtitle.png)
-![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/Forumtitle.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/ForumDetail.png)
