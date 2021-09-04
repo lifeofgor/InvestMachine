@@ -7,4 +7,4 @@ INVEST MACHINE is an investment portal with sections: news, forum, about us, per
 4) Personal page - a section accessible only to authorized users. On it, a person can change the data that he entered during registration, as well as write a new post on the forum. Messages written by a person appear on his personal page. 
 5) There is registration and entrance
 
-https://github.com/lifeofogor/InvestMachine/raw/master/info.png
+![Image alt](https://github.com/lifeofogor/InvestMachine/raw/master/info.png)
