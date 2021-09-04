@@ -7,4 +7,14 @@ INVEST MACHINE is an investment portal with sections: news, forum, about us, per
 4) Personal page - a section accessible only to authorized users. On it, a person can change the data that he entered during registration, as well as write a new post on the forum. Messages written by a person appear on his personal page. 
 5) There is registration and entrance
 
-![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/ForumDetail.png)
+
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/NewsLine.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/NewsDetail.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/about.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/vhod.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/registration.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/page.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/addNews.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/info.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/Forumtitle.png)
+![Image alt](https://github.com/lifeofgor/InvestMachine/blob/master/Forumtitle.png)
